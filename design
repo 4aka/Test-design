@@ -1,0 +1,140 @@
+
+Create entitiy
+
+Check that entitiy:
+can be created with nominal value
+can be created with min value
+can be created with max value
+...
+cannot be created with min-1 value.
+cannot be created with max+1 value.
+cannot be created with empty field.
+cannot be created with null value.
+cannot be created without required field.
+cannot be created when passing wrong parameter.
+cannot be created with empty body.
+cannot be created with extra field.
+...
+check that all allowed roles has an access to create a new entity.
+check that forbidden roles cannot create a new entity.
+check that user with fake id cannot create a new entity.
+...
+send POST request with wrong token / credentials
+verify status code
+verify request contsins all sent data
+verify request does not contain extra data [if it is not accepted]
+verify request does not contain sensitive data [if it is not accepted]
+try to send http request instead of https, and vice versa
+
+----------------------------------------------------------------------
+
+Edit entitiy
+
+Check that entitiy:
+can be edited with nominal values
+can be edited with min values
+can be edited with max values
+...
+cannot be edited with min-1 value.
+cannot be edited with max+1 value.
+cannot be edited with empty field.
+cannot be edited with null value.
+cannot be edited without passing required fields.
+cannot be edited when passing wrong parameters.
+cannot be edited with empty body.
+cannot be created with extra field.
+...
+check that all allowed roles has an access to edit entity.
+check that forbidden roles cannot edit entity.
+check that user with fake id cannot edit entity.
+...
+send PUT request with wrong token / credentials
+verify status code
+verify request contsins all sent data
+verify request does not contain extra data [if it is not accepted]
+verify request does not contain sensitive data [if it is not accepted]
+
+----------------------------------------------------------------------
+
+Delete entitiy
+
+Check that entitiy:
+can be deleted
+...
+can not be deleted by wrong Id
+can not be deleted by wrong value [abc]
+...
+send DELETE request with wrong token / credentials
+verify status code
+
+----------------------------------------------------------------------
+
+List of entities
+
+Check that:
+SKIP parameter = 0, 5000 [need to know quontity], int length
+TAKE paramter = 0, 5000 [need to know quontity], int length
+correct error message returns if list request contains extra fields
+correct error message returns if list request does not contain required fields
+required fields/objects in the response
+...
+created entity in the list
+edited entity in the list
+...
+send request with wrong token / credentials
+verify status code
+corect respone returns [GET, POST]
+----------------------------------------------------------------------
+
+Search
+
+Check that:
+list contains searched entities by:
+1 letter
+1 word
+2 words
+3 words
+...
+search engine cannot respond if request = ' ' [spase]
+search engine works with min field values
+search engine works with max field value
+correct error message returns if extra fileds in request
+correct error message returns if request does not contain required fields
+...
+send request with wrong token / credentials
+verify status code
+corect respone returns [GET, POST]
+----------------------------------------------------------------------
+
+Filter
+
+Check that:
+list filtered by 1 parameter
+list filtered by max allowed parameters
+...
+correct error message returns if extra fileds in request
+correct error message returns if request does not contain required fields
+...
+send request with wrong token / credentials
+verify status code
+corect respone returns [GET, POST]
+----------------------------------------------------------------------
+
+Sorting
+
+Check that list sorted:
+by ASC
+by DESC
+by allowed parameter
+...
+error returns if extra parameter
+error returns if request does not contain required parameter
+...
+send request with wrong token / credentials
+verify status code
+corect respone returns [GET, POST]
+----------------------------------------------------------------------
+
+Mixing rules
+
+Test sorting and filtering in one request
